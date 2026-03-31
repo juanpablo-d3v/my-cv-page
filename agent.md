@@ -20,9 +20,9 @@ web-cv/
     │   ├── /components  # Reusable components (UI)
     │   ├── /services    # APIs/Bussiness logic call
     │   └── /utils       # Helpers
-    └── /assets
-        ├── /images
-        └── /icons
+└── assets
+    ├── /images
+    └── /icons
 ```
 
 ## Code rules
