@@ -13,16 +13,16 @@ A modern, responsive landing page template using vanilla HTML, CSS, and JavaScri
 ```
 web-cv/
 ├── index.html           # bootstrap
-├── css/
-│   └── styles.css       # global styles
-|── js/
+├── styles/
+│   └── style.css       # global styles
+|── scripts/
 │   ├── main.js          # Main (import modules)
     │   ├── /components  # Reusable components (UI)
     │   ├── /services    # APIs/Bussiness logic call
     │   └── /utils       # Helpers
-└── assets
-    ├── /images
-    └── /icons
+|── images
+│    ├── /logos
+│    └── /icons
 ```
 
 ## Code rules
@@ -56,7 +56,8 @@ Paper White (#F9FBF9)
 formal
 
 ### Sketching out your design
-Not yet defined
+Use the next image:
+![CV Web Sketching](./images/cv-web-sketching.jpg)
 
 ### Choosing a theme color
 
@@ -69,17 +70,17 @@ Not yet defined
 | Surface Variant | #43474E | Cards, project containers |
 
 ### Choosing an image
-Not yet defined
+![Logo](./images/logos/logoJP.png)
 
 ### Choosing a font
 Merriweather Sans
 
 ## Design definitions
-The theme color is based on Material Design suggestion. Consider next tips
+The theme color is based on Material Design suggestion. Consider next tips:
 
-Contrast: Ensure your text (On Surface) is either white (#FFFFFF) or a very light grey (#E3E2E6) to meet accessibility standards.
+- Contrast: Ensure your text (On Surface) is either white (#FFFFFF) or a very light grey (#E3E2E6) to meet accessibility standards.
 
-Elevation: In Material 3, "Elevation" is shown by making the Surface Variant slightly lighter than the Surface. This creates a visual hierarchy for your "Work Experience" cards.
+- Elevation: In Material 3, "Elevation" is shown by making the Surface Variant slightly lighter than the Surface. This creates a visual hierarchy for your "Work Experience" cards.
 
-Accent Usage: Use your Primary color sparingly—around 10% of the page—to draw the eye to your Call to Action (like a "Download PDF" button).
+- Accent Usage: Use your Primary color sparingly—around 10% of the page—to draw the eye to your Call to Action (like a "Download PDF" button).
 
