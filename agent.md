@@ -60,14 +60,36 @@ Use the next image:
 ![CV Web Sketching](./images/cv-web-sketching.jpg)
 
 ### Choosing a theme color
+Follow Material Design baselines colors M3 specification and roles
 
-| Role | Color Hex | Usage |
-| --- | --- | --- |
-| Primary | #90CAF9 | Headlines, active tab state |
-| On Primary | #003258 | Text inside primary buttons |
-| Secondary | #72D572 | Skill badges, "Available for hire" status |
-| Surface | #1A1C1E | Main background |
-| Surface Variant | #43474E | Cards, project containers |
+/* Primary - High emphasis */
+  --md-sys-color-primary: #D0E4FF;
+  --md-sys-color-on-primary: #003258;
+  --md-sys-color-primary-container: #00497D;
+  --md-sys-color-on-primary-container: #D1E4FF;
+
+  /* Secondary - Less prominent */
+  --md-sys-color-secondary: #BBC7DB;
+  --md-sys-color-on-secondary: #253140;
+  --md-sys-color-secondary-container: #3B4858;
+  --md-sys-color-on-secondary-container: #D7E3F7;
+
+  /* Tertiary - Contrast accents */
+  --md-sys-color-tertiary: #D6BEE4;
+  --md-sys-color-on-tertiary: #3B2948;
+  --md-sys-color-tertiary-container: #523F5F;
+  --md-sys-color-on-tertiary-container: #F2DAFF;
+
+  /* Neutral/Surface */
+  --md-sys-color-surface: #1A1C1E;
+  --md-sys-color-on-surface: #E2E2E6;
+  --md-sys-color-surface-variant: #43474E;
+  --md-sys-color-on-surface-variant: #C3C7CF;
+  --md-sys-color-outline: #8D9199;
+
+  /* Error */
+  --md-sys-color-error: #FFB4AB;
+  --md-sys-color-on-error: #690005;
 
 ### Choosing an image
 ![Logo](./images/logos/logoJP.png)
@@ -84,3 +106,4 @@ The theme color is based on Material Design suggestion. Consider next tips:
 
 - Accent Usage: Use your Primary color sparingly—around 10% of the page—to draw the eye to your Call to Action (like a "Download PDF" button).
 
+- Apply responsive design in all layout and sections according to Material Design suggestion

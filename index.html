@@ -3,9 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV</title>
+    <meta name="description" content="JuanPablo Dev - Web developer with 12+ years of experience in frontend technologies">
+    <meta name="theme-color" content="#1A1C1E">
+    <title>JuanPablo Dev | Web Developer</title>
+
+    <!-- Google Fonts: Merriweather Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Material Symbols Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    
+    <!-- [JP-DEV] Navigation Header -->
+    <header role="banner">
+        <div class="header-container">
+            <div class="header-logo">
+                <img alt="JuanPablo Dev Logo" src="./images/logos/logoJP.png" loading="lazy">
+            </div>
+            <nav class="header-nav-desktop" role="navigation" aria-label="Main Navigation">
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#certifications">Certifications</a>
+                <button aria-label="Connect">Connect</button>
+            </nav>
+            <div class="header-icons" role="group" aria-label="Social Links">
+                <span class="material-symbols-outlined" aria-label="Email" role="button" tabindex="0">mail</span>
+                <span class="material-symbols-outlined" aria-label="Share" role="button" tabindex="0">share</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero easter-egg-container" aria-label="Hero Section">
+            <!-- Background Image -->
+            <div class="hero-bg">
+                <img alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwEfOw9_ZGXsEC8xx1sI0ojEZ0vuObiqOazpsVJiZT1-1Ke3RHqCzvChAIPg3h5EH--IzH4swUpHpXyN4VrqfByzIxjOemtT2wCeuWHXOPMZ4YsPUCPfuHAhvRBs3_InVNRokZ2dvGZOWwaLHasfwHTRP4a5-X7AOiodf2QwY3yf2jNNCmhFIYr4OURG7aAJDYuKjsdBa-m2Y6il_Lssms1YZ7ADfSmWZnYHleQZKRqsUiBrH48QDaBrbDpnrW70iw_gl0AatlSV8" loading="lazy">
+                <div class="hero-gradient"></div>
+            </div>
+            <!-- Easter Egg -->
+            <div class="easter-egg" aria-hidden="true">LEARN TO UNLEARN</div>
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h1>JuanPablo Dev</h1>
+                <p class="hero-description">
+                    Web developer with <span class="highlight">12+ years</span> of experience, focused in front-end technologies to develop web solutions.
+                </p>
+                <div class="hero-cta">
+                    <a href="mailto:hello@juanpablo.dev" class="cta-email">
+                        <span class="material-symbols-outlined">alternate_email</span>
+                        <span>Connect via Email</span>
+                    </a>
+                    <div class="cta-icons">
+                        <span class="material-symbols-outlined" role="button" tabindex="0" title="LinkedIn">link</span>
+                        <span class="material-symbols-outlined" role="button" tabindex="0" title="GitHub">code</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience-section" id="experience" aria-labelledby="experience-title">
+            <div class="section-container">
+                <div class="experience-grid">
+                    <!-- Left Column: Section Title -->
+                    <div class="experience-header">
+                        <h2 id="experience-title">Experience Info</h2>
+                        <p>A decade-plus journey of architectural precision in digital landscapes.</p>
+                    </div>
+
+                    <!-- Right Column: Experience Cards -->
+                    <div class="experience-cards">
+                        <!-- Experience Card 1 -->
+                        <article class="experience-card">
+                            <div class="experience-card-header">
+                                <div class="company-logo">
+                                    <img alt="Company Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9oUvs_UoAPx_SeCVBNotsPkEzlBBj0drGvSUXNg1q4ge0gY1n7oi7ulvEircr_Iufn3ohH6-_lwpyaAq7TRtT0r4A4sZR9uwzd_lnuLj2x-KHaD86XAYvD63RVN7ADezvav-uZxFFGLZiSpmJEWyDAW6mK0kft_znUEPPXE4SB7tcwkaJgEgh5PvutimR5A5WWmk-EdMht_7FO4heUBrKsc4IZR7h9yW98sHMna80fsXRa2uE2D8HoJzh-8tOD3z_iUP2E5Umy4Y" loading="lazy">
+                                </div>
+                                <span class="company-badge present">Present</span>
+                            </div>
+                            <h3>Senior Lead Developer</h3>
+                            <p class="experience-card-role">Harvard Architecture Tech • Jan 2018 — Present</p>
+                            <div class="experience-card-description">
+                                <p>Architected scalable front-end infrastructures using React and TypeScript, improving rendering performance by 40%.</p>
+                                <p>Led a cross-functional team of 12 developers through high-stakes product launches for Fortune 500 clients.</p>
+                            </div>
+                            <div class="experience-card-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Next.js</span>
+                            </div>
+                        </article>
+
+                        <!-- Experience Card 2 -->
+                        <article class="experience-card past">
+                            <div class="experience-card-header">
+                                <div class="company-logo">
+                                    <img alt="Company Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1TeFhy4SAPheGTY-Xn9b5f3rzLYnhg4RqCS_BofkOjlotEx574AWlc-nOc4h947Q3UFrLJi5poWkgWADQrssoI_9REXA5kG6E7HFg-ZiYzkgFv2KcNp9qx3rzECxcAU5PjGxkD3cs8GMDMnLh4I4EWV2sqNlxQn5b8cp1Rj5D1jGaYs3Bb6WVx-QPjCCHUN76pT1AAsTdcFZUGry4HlQjN87bXTn_Zzfx9SQpaQUs25CYPAYHfzhFfcxS9KdnaUfUzRcX7mkYEFc" loading="lazy">
+                                </div>
+                                <span class="company-badge past">2012 - 2018</span>
+                            </div>
+                            <h3>UI Engineering Specialist</h3>
+                            <p class="experience-card-role">Global Digital Solutions • Full-time</p>
+                            <div class="experience-card-description">
+                                <p>Pioneered the transition from monolithic architectures to modular micro-frontends.</p>
+                                <p>Established the internal Design System used across 4 different product verticals.</p>
+                            </div>
+                            <div class="experience-card-tags">
+                                <span class="tag">Angular</span>
+                                <span class="tag">Sass</span>
+                                <span class="tag">Web Components</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Stack / Skills Section -->
+        <section class="skills-section" id="skills" aria-labelledby="skills-title">
+            <div class="section-container">
+                <div class="section-title">
+                    <h2 id="skills-title">Technical Stack</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Skill Card 1: JavaScript -->
+                    <article class="skill-card">
+                        <div class="skill-card-image">
+                            <img alt="JavaScript Technical Background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgPqS5jF_1XFCo5-zEwjfpvOlFDSSMvFfxjARsy8O8oeVPLafRpJ-KfPQS3Y_VLHg7xvv6dKDV2UmyJDPuFQt3MSakQXrzNFEh0--1p2d0iXC-mNWcINuaqjiMOQOqDW--Pss_1YCzGx_a8-FHD9AxSr2E0d1jRJdYElYr_SQ7PsFcBcgAsUBFTI2Vf3eFDznrNsO_tv_l5uQS-_nwhpCvfck_mxwEjitaZ5UvWXDy3a_e3WtJT1F_bvBSeCsZWOeom4Ws46Tkxmo" loading="lazy">
+                            <div class="skill-card-title">
+                                <h4>JavaScript</h4>
+                            </div>
+                        </div>
+                        <div class="skill-card-content">
+                            <p class="skill-card-description">Expertise in ES6+, asynchronous patterns, and high-performance logic for complex web applications.</p>
+                            <div class="skill-card-footer">
+                                <span class="skill-level">Advanced</span>
+                                <span class="material-symbols-outlined skill-card-icon">code</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Skill Card 2: React -->
+                    <article class="skill-card">
+                        <div class="skill-card-image">
+                            <img alt="React Development" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCazJk2i28VI22owmbmlUUBCCOoj6R8I3KMG4fXYw4ltF0YHlpa3xE32fYJiBreH44vrHIgTh7yf4IGYDqSCYmLwwjNAYw7l7M1SPtb9Kxc2j15VSRbKLtffGY6-_OprV2q7vtsY_dG03tQEG_fW2Ly-AdJ5nBNiyA3xXLi_OFYXRfvgnIIgbT-7ok3fSzkhEH09fPeG9R-p6ZIJy9NUgCy9QWs0QWo7t5uBSMMxPsXFiRJG9VBA8roJy9NgJwD-Lx9_G3AJpKfO9E" loading="lazy">
+                            <div class="skill-card-title">
+                                <h4>React / Next</h4>
+                            </div>
+                        </div>
+                        <div class="skill-card-content">
+                            <p class="skill-card-description">Building scalable interfaces with Hooks, Context API, and Server-Side Rendering for optimal SEO and UX.</p>
+                            <div class="skill-card-footer">
+                                <span class="skill-level">Specialist</span>
+                                <span class="material-symbols-outlined skill-card-icon">layers</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Skill Card 3: CSS -->
+                    <article class="skill-card">
+                        <div class="skill-card-image">
+                            <img alt="CSS Design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0GZ8rhVADJoXDRfBsseXW5xnEXxx21LDB4uziIaMZ10YMLA3AB42teYqz2-Xzob7s-oB0WYrOXFVr3VylCpJJPA3wQLkNnnx4tD6Urgnv50_EyGfFkF4Jm2OP1C_0k0d2-2W-UG1L4uOmbCPRLK1DPilg22puGGVgo1vn0TVuvED56-H1Le1BYZmB_qxHA9eLJ-UQQb52sPu6kurptbYVzw3SeNaIKTEi28zttTYWzJM8lydOMDD_OKkxiUNvTiDBPo7Y9OkTtUg" loading="lazy">
+                            <div class="skill-card-title">
+                                <h4>CSS & Design</h4>
+                            </div>
+                        </div>
+                        <div class="skill-card-content">
+                            <p class="skill-card-description">Architecting utility-first design systems and responsive layouts with precision and maintainability.</p>
+                            <div class="skill-card-footer">
+                                <span class="skill-level">Expert</span>
+                                <span class="material-symbols-outlined skill-card-icon">palette</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Skill Card 4: Architecture -->
+                    <article class="skill-card">
+                        <div class="skill-card-image">
+                            <img alt="System Design Architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQJj3yqlxe3u7apEbae1fjOtm3vm7MJziBzDP7kyKVbf-RR_FsGWuchw_yfEE8aXABd2QTE4ftJ78VB18dJAQqy3Vb8ysGIWJye1x7vkgtOAMNQiGNGSgGdb1QeulWDs4jzYobuh2ZbjrLfULGXEViSYcU3hsw60Uxt4KJmcGy7RXqRHRMCxE8GFHxMxJ6wSmggo82cajX47Qc0Hx52wROMMu2z1opvPBFpqKOFtSyU_toBiLkmqYyHk9Sp1K_O4YnKzm2NArbtcU" loading="lazy">
+                            <div class="skill-card-title">
+                                <h4>System Design</h4>
+                            </div>
+                        </div>
+                        <div class="skill-card-content">
+                            <p class="skill-card-description">Designing modular micro-frontends and robust API integrations for enterprise-level platforms.</p>
+                            <div class="skill-card-footer">
+                                <span class="skill-level">Lead Level</span>
+                                <span class="material-symbols-outlined skill-card-icon">architecture</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Languages Section -->
+        <section class="certifications-section" id="certifications" aria-labelledby="certifications-title">
+            <div class="section-container">
+                <div class="cert-grid">
+                    <!-- Languages -->
+                    <div class="cert-section">
+                        <h2>Communication</h2>
+                        <div>
+                            <div class="language-item">
+                                <span class="language-name">Spanish</span>
+                                <div class="language-level">
+                                    <div class="level-bar"></div>
+                                    <div class="level-bar"></div>
+                                    <div class="level-bar"></div>
+                                    <span class="level-text">Native</span>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">English</span>
+                                <div class="language-level">
+                                    <div class="level-bar"></div>
+                                    <div class="level-bar"></div>
+                                    <div class="level-bar empty"></div>
+                                    <span class="level-text">Professional</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="cert-section">
+                        <h2 id="certifications-title">Certifications</h2>
+                        <div class="certification-list">
+                            <div class="certification-item" role="button" tabindex="0">
+                                <span class="material-symbols-outlined cert-icon">picture_as_pdf</span>
+                                <div class="cert-info">
+                                    <p class="cert-name">AWS Cloud Practitioner</p>
+                                    <p class="cert-link">Verify Credential</p>
+                                </div>
+                            </div>
+                            <div class="certification-item" role="button" tabindex="0">
+                                <span class="material-symbols-outlined cert-icon">picture_as_pdf</span>
+                                <div class="cert-info">
+                                    <p class="cert-name">Google UX Design</p>
+                                    <p class="cert-link">Verify Credential</p>
+                                </div>
+                            </div>
+                            <div class="certification-item" role="button" tabindex="0">
+                                <span class="material-symbols-outlined cert-icon">picture_as_pdf</span>
+                                <div class="cert-info">
+                                    <p class="cert-name">Meta React Expert</p>
+                                    <p class="cert-link">Verify Credential</p>
+                                </div>
+                            </div>
+                            <div class="certification-item" role="button" tabindex="0">
+                                <span class="material-symbols-outlined cert-icon">picture_as_pdf</span>
+                                <div class="cert-info">
+                                    <p class="cert-name">Certified Scrum Master</p>
+                                    <p class="cert-link">Verify Credential</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interests Section -->
+        <section class="interests-section" aria-label="Personal Interests">
+            <div class="section-container">
+                <div class="interests-container">
+                    <span class="material-symbols-outlined interests-icon">sprint</span>
+                    <div class="interests-content">
+                        <h4>Interests</h4>
+                        <p>Beyond the terminal, I am an enthusiast of generative art, marathon running, and the quiet complexity of specialty coffee brewing. I believe that a sharp mind is maintained through the balance of technical discipline and creative exploration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" rel="noopener noreferrer">LinkedIn</a>
+                <a href="#" rel="noopener noreferrer">GitHub</a>
+                <a href="#" rel="noopener noreferrer">Twitter</a>
+            </div>
+            <p class="footer-text">© 2024 JuanPablo Dev. Designed with Precision Architecture.</p>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript Entry Point -->
+    <script type="module" src="./scripts/main.js"></script>
 </body>
 </html>
