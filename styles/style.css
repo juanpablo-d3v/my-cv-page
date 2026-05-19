@@ -239,12 +239,18 @@ nav button:hover {
   gap: 1rem;
 }
 
-.header-icons .material-symbols-outlined {
+.header-icons .material-symbols-outlined,
+.header-icons .header-icon-link {
   cursor: pointer;
   transition: opacity var(--transition-fast);
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
 
-.header-icons .material-symbols-outlined:hover {
+.header-icons .material-symbols-outlined:hover,
+.header-icons .header-icon-link:hover {
   opacity: 0.8;
 }
 
@@ -288,29 +294,29 @@ section.hero {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.3;
-  filter: grayscale(1) contrast(1.25);
+  opacity: 0.4;
+  filter: grayscale(0.75) contrast(1.25);
 }
 
 .hero-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, var(--md-sys-color-surface) 0%, rgba(26, 28, 30, 0.8) 50%, transparent 100%);
+  background: linear-gradient(to left, var(--md-sys-color-surface) 1%, rgba(26, 28, 30, 0.8) 70%, transparent 100%);
 }
 
 .easter-egg-container:hover .easter-egg {
-  opacity: 0.1;
+  opacity: 0.01;
 }
 
 .easter-egg {
   position: absolute;
-  top: 25%;
-  right: -80px;
+  top: 40%;
+  right: 10%;
   font-family: var(--font-headline);
-  font-size: 12rem;
+  font-size: 3rem;
   font-weight: 900;
   white-space: nowrap;
-  opacity: 0.04;
+  opacity: 0.005;
   transform: rotate(90deg);
   transition: opacity var(--transition-normal);
   user-select: none;
@@ -340,7 +346,7 @@ section.hero {
 }
 
 .hero-description .highlight {
-  color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-tertiary);
   font-weight: 500;
 }
 
@@ -435,7 +441,7 @@ section.interests-section {
 
 @media (min-width: 768px) {
   .experience-grid {
-    grid-template-columns: minmax(0, 300px) minmax(0, 600px);
+    grid-template-columns: 1fr 2fr;
     gap: 3rem;
   }
 }
@@ -545,6 +551,11 @@ section.interests-section {
   color: var(--md-sys-color-on-surface-variant);
   margin-bottom: 2rem;
   font-size: 0.875rem;
+}
+
+.experience-card-description strong {
+  font-weight: 600;
+  color: var(--md-sys-color-primary);
 }
 
 .experience-card-tags {

@@ -85,7 +85,7 @@ class IconHandler {
   }
 
   handleHeaderIcon(icon) {
-    const iconType = icon.getAttribute('data-icon') || icon.textContent;
+    const iconType = (icon.getAttribute('data-icon') || icon.textContent || '').trim();
     switch (iconType) {
       case 'mail':
         window.location.href = 'mailto:hello@juanpablo.dev';
