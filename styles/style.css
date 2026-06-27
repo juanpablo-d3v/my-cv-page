@@ -494,8 +494,8 @@ section.interests-section {
 }
 
 .company-logo {
-  width: 4rem;
   height: 4rem;
+  aspect-ratio: 2.39 / 1;
   background-color: var(--md-sys-color-surface-container);
   border-radius: var(--radius-md);
   display: flex;
