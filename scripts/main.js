@@ -147,9 +147,14 @@ class CertificationHandler {
   }
 
   handleCertificationClick(certItem) {
+    const docPath = certItem.getAttribute('data-doc');
+    if (docPath) {
+      window.open(docPath, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
     const certName = certItem.querySelector('.cert-name').textContent;
     console.log(`Certification clicked: ${certName}`);
-    // In a real application, this might open a modal or navigate to verification page
   }
 }
 
