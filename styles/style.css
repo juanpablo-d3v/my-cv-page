@@ -221,6 +221,20 @@ nav button:hover {
   align-items: center;
 }
 
+.header-logo span {
+  color: var(--md-sys-color-secondary);
+  font-weight: 900;
+  letter-spacing: -0.5rem;
+  margin-right: 0.725rem;
+}
+
+.header-logo h1 {
+  font-family: var(--font-headline);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--md-sys-color-primary);
+}
+
 .header-nav-desktop {
   display: none;
   align-items: center;
