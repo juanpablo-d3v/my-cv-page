@@ -1,0 +1,43 @@
+/* ============================================
+   Interests Section
+   ============================================ */
+.interests-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0.6;
+  transition: opacity var(--transition-normal);
+  flex-wrap: wrap;
+}
+
+.interests-container:hover {
+  opacity: 1;
+}
+
+.interests-icon {
+  font-size: 3.75rem;
+  color: var(--md-sys-color-primary);
+  flex-shrink: 0;
+}
+
+.interests-content {
+  text-align: center;
+}
+
+.interests-content h4 {
+  font-size: 0.875rem;
+  font-family: var(--font-headline);
+  font-weight: 900;
+  color: var(--md-sys-color-secondary);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.interests-content p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 40rem;
+  font-weight: 300;
+}

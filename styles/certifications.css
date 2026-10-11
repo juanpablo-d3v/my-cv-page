@@ -1,0 +1,114 @@
+/* ============================================
+   Certifications & Languages Section
+   ============================================ */
+.cert-grid {
+  display: grid;
+  column-gap: 5rem;
+  row-gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cert-section h2 {
+  color: var(--md-sys-color-primary);
+  margin-bottom: 2.5rem;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  transition: all var(--transition-fast);
+}
+
+.language-item:hover {
+  color: var(--md-sys-color-secondary);
+}
+
+.language-name {
+  font-size: 1.25rem;
+  font-family: var(--font-headline);
+  font-weight: 500;
+}
+
+.language-level {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.level-bar {
+  width: 3rem;
+  height: 0.375rem;
+  background-color: var(--md-sys-color-secondary);
+  border-radius: var(--radius-full);
+}
+
+.level-bar.empty {
+  background-color: var(--md-sys-color-surface-variant);
+}
+
+.level-text {
+  font-size: 0.75rem;
+  font-family: var(--font-label);
+  color: var(--md-sys-color-on-surface-variant);
+  margin-left: 0.5rem;
+}
+
+.certification-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.certification-item {
+  background-color: var(--md-sys-color-surface-variant);
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.certification-item:hover {
+  background-color: rgba(208, 228, 255, 0.1);
+}
+
+.cert-icon {
+  color: var(--md-sys-color-secondary);
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.cert-info {
+  flex-grow: 1;
+}
+
+.cert-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--font-headline);
+  line-height: 1.2;
+}
+
+.cert-link {
+  display: inline-block;
+  font-size: 0.625rem;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-top: 0.25rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.cert-link:hover,
+.cert-link:focus-visible {
+  color: var(--md-sys-color-primary);
+  text-decoration: underline;
+}
