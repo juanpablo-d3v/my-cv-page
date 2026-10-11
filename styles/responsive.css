@@ -1,0 +1,47 @@
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1.5rem;
+  }
+
+  .header-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+
+  .section-container {
+    padding: 0 1.5rem;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-header h2 {
+    position: static;
+  }
+
+  .cta-icons {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .interests-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .interests-icon {
+    margin: 0 auto;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

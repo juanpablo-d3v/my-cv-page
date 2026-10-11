@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>JuanPablo Dev | Precision Architect</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#e2e2e5",
+                        "outline-variant": "#41474e",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#282a2c",
+                        "secondary": "#79dc78",
+                        "on-secondary-container": "#96fb93",
+                        "on-primary-fixed": "#001e30",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#c5e3ff",
+                        "error-container": "#93000a",
+                        "surface-tint": "#93cdfc",
+                        "primary-container": "#90caf9",
+                        "tertiary": "#c8e3ff",
+                        "on-secondary-fixed-variant": "#005314",
+                        "on-tertiary": "#003352",
+                        "inverse-on-surface": "#2f3133",
+                        "inverse-primary": "#21638d",
+                        "on-secondary": "#00390b",
+                        "on-secondary-fixed": "#002204",
+                        "surface-container-lowest": "#0c0e10",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "on-primary": "#00344f",
+                        "inverse-surface": "#e2e2e5",
+                        "tertiary-fixed": "#cde5ff",
+                        "surface-container-low": "#1a1c1e",
+                        "surface-variant": "#333537",
+                        "tertiary-container": "#8ecaff",
+                        "on-tertiary-fixed": "#001d32",
+                        "surface-dim": "#121416",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#c1c7cf",
+                        "secondary-container": "#017620",
+                        "secondary-fixed-dim": "#79dc78",
+                        "on-primary-container": "#08557e",
+                        "surface": "#121416",
+                        "surface-bright": "#37393b",
+                        "on-surface": "#e2e2e5",
+                        "primary-fixed-dim": "#93cdfc",
+                        "secondary-fixed": "#94f991",
+                        "on-primary-fixed-variant": "#004b71",
+                        "on-tertiary-container": "#005584",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "outline": "#8b9199",
+                        "surface-container": "#1e2022",
+                        "background": "#121416",
+                        "surface-container-highest": "#333537",
+                        "primary-fixed": "#cbe6ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Work Sans"],
+                        "label": ["Work Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .easter-egg {
+            opacity: 0.04;
+            transition: opacity 0.5s ease;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .easter-egg-container:hover .easter-egg {
+            opacity: 0.1;
+        }
+
+        .glass-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation Bar -->
+    <header
+        class="bg-transparent backdrop-blur-xl text-blue-300 dark:text-blue-200 docked full-width top-0 sticky no-line backdrop-blur-lg flat no shadows z-50">
+        <div class="flex justify-between items-center w-full px-10 py-4 max-w-screen-2xl mx-auto">
+            <div class="flex items-center">
+                <img alt="JuanPablo Dev Logo" class="h-10 md:h-12 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida/ADBb0ujgz1JumNRNDd1pa5F0sRcM1w8-wBK0_kOpZvdv6GwQqmXLmiqe_5hYNSzlVUW2Eh3QRUGH5ja5JwQgxz7HS6E53OU1S_6P33Q8RmAO_p0-ZhqHub182qZnFDwZ7CMiMnsi3ANdCc3SZG1PyfZwddb1noH6PGqOy6pONuNbzUMxn7zxQH0Y1VFNWX_ECM7Wb7Wnm7oEirc3H52KUxgU6VtQWzvJzjVna35_ZPeclzbv4yMdEvLeeDBD-HFltH2B3J2j5_gIoTbs9Q" />
+            </div>
+            <nav class="hidden md:flex items-center gap-8 font-headline font-bold tracking-tight">
+                <a class="text-slate-300 hover:text-white transition-colors hover:opacity-80 transition-opacity"
+                    href="#experience">Experience</a>
+                <a class="text-slate-300 hover:text-white transition-colors hover:opacity-80 transition-opacity"
+                    href="#skills">Skills</a>
+                <a class="text-slate-300 hover:text-white transition-colors hover:opacity-80 transition-opacity"
+                    href="#certifications">Certifications</a>
+                <button
+                    class="bg-primary-container text-on-primary-container px-6 py-2 rounded-xl font-bold scale-95 active:scale-90 duration-200">Connect</button>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined cursor-pointer hover:opacity-80 transition-opacity"
+                    data-icon="mail">mail</span>
+                <span class="material-symbols-outlined cursor-pointer hover:opacity-80 transition-opacity"
+                    data-icon="share">share</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center overflow-hidden easter-egg-container">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img alt="JuanPablo Dev Profile" class="w-full h-full object-cover opacity-30 grayscale contrast-125"
+                    data-alt="Cinematic close-up of dark code on a monitor with moody blue and purple neon reflections and shallow depth of field"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwEfOw9_ZGXsEC8xx1sI0ojEZ0vuObiqOazpsVJiZT1-1Ke3RHqCzvChAIPg3h5EH--IzH4swUpHpXyN4VrqfByzIxjOemtT2wCeuWHXOPMZ4YsPUCPfuHAhvRBs3_InVNRokZ2dvGZOWwaLHasfwHTRP4a5-X7AOiodf2QwY3yf2jNNCmhFIYr4OURG7aAJDYuKjsdBa-m2Y6il_Lssms1YZ7ADfSmWZnYHleQZKRqsUiBrH48QDaBrbDpnrW70iw_gl0AatlSV8" />
+                <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+            </div>
+            <!-- Easter Egg -->
+            <div
+                class="absolute top-1/4 -right-20 transform rotate-90 easter-egg font-headline font-black text-[12rem] whitespace-nowrap">
+                LEARN TO UNLEARN
+            </div>
+            <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-10">
+                <div class="max-w-3xl">
+                    <h1
+                        class="text-[clamp(3.5rem,10vw,6rem)] font-headline font-black leading-tight tracking-tighter text-primary mb-6">
+                        JuanPablo Dev
+                    </h1>
+                    <p class="text-2xl md:text-3xl font-light text-on-surface-variant mb-10 leading-relaxed">
+                        Web developer with <span class="text-secondary font-medium">12+ years</span> of experience,
+                        focused in front-end technologies to develop web solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-6 items-center">
+                        <a class="flex items-center gap-3 text-xl font-headline font-bold text-primary hover:text-white transition-colors group"
+                            href="mailto:hello@juanpablo.dev">
+                            <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform"
+                                data-icon="alternate_email">alternate_email</span>
+                            <span>Connect via Email</span>
+                        </a>
+                        <div class="flex gap-4 items-center pl-6 border-l border-outline-variant/30">
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors"
+                                data-icon="link">link</span>
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors"
+                                data-icon="code">code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Experience Section -->
+        <section class="py-24 bg-surface-container-low" id="experience">
+            <div class="max-w-screen-2xl mx-auto px-10">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/3">
+                        <h2 class="text-5xl font-headline font-black text-primary sticky top-32">
+                            Experience Info
+                        </h2>
+                        <p class="mt-4 text-on-surface-variant max-w-sm">
+                            A decade-plus journey of architectural precision in digital landscapes.
+                        </p>
+                    </div>
+                    <div class="md:w-2/3 flex flex-col gap-8">
+                        <!-- Experience Card 1 -->
+                        <div
+                            class="bg-surface-variant p-8 rounded-xl relative group overflow-hidden border border-transparent hover:border-primary/20 transition-all">
+                            <div class="flex justify-between items-start mb-6">
+                                <div
+                                    class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center p-2">
+                                    <img alt="Company Logo" class="w-full h-full object-contain opacity-80"
+                                        data-alt="Abstract minimalist company logo in monochromatic blue shades"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9oUvs_UoAPx_SeCVBNotsPkEzlBBj0drGvSUXNg1q4ge0gY1n7oi7ulvEircr_Iufn3ohH6-_lwpyaAq7TRtT0r4A4sZR9uwzd_lnuLj2x-KHaD86XAYvD63RVN7ADezvav-uZxFFGLZiSpmJEWyDAW6mK0kft_znUEPPXE4SB7tcwkaJgEgh5PvutimR5A5WWmk-EdMht_7FO4heUBrKsc4IZR7h9yW98sHMna80fsXRa2uE2D8HoJzh-8tOD3z_iUP2E5Umy4Y" />
+                                </div>
+                                <span
+                                    class="bg-secondary/10 text-secondary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Present</span>
+                            </div>
+                            <h3 class="text-3xl font-headline font-bold text-primary mb-2">Senior Lead Developer</h3>
+                            <p class="text-lg text-on-surface mb-6 font-medium">Harvard Architecture Tech • Jan 2018 —
+                                Present</p>
+                            <div class="space-y-4 text-on-surface-variant body-lg">
+                                <p>Architected scalable front-end infrastructures using React and TypeScript, improving
+                                    rendering performance by 40%.</p>
+                                <p>Led a cross-functional team of 12 developers through high-stakes product launches for
+                                    Fortune 500 clients.</p>
+                            </div>
+                            <div class="mt-8 pt-8 border-t border-outline-variant/15 flex flex-wrap gap-2">
+                                <span
+                                    class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-xs font-label">React</span>
+                                <span
+                                    class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-xs font-label">TypeScript</span>
+                                <span
+                                    class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-xs font-label">Next.js</span>
+                            </div>
+                        </div>
+                        <!-- Experience Card 2 -->
+                        <div
+                            class="bg-surface-variant p-8 rounded-xl relative group overflow-hidden border border-transparent hover:border-primary/20 transition-all opacity-80 hover:opacity-100">
+                            <div class="flex justify-between items-start mb-6">
+                                <div
+                                    class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center p-2">
+                                    <img alt="Company Logo" class="w-full h-full object-contain opacity-80"
+                                        data-alt="Simplified tech startup logo with geometric shapes on dark background"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1TeFhy4SAPheGTY-Xn9b5f3rzLYnhg4RqCS_BofkOjlotEx574AWlc-nOc4h947Q3UFrLJi5poWkgWADQrssoI_9REXA5kG6E7HFg-ZiYzkgFv2KcNp9qx3rzECxcAU5PjGxkD3cs8GMDMnLh4I4EWV2sqNlxQn5b8cp1Rj5D1jGaYs3Bb6WVx-QPjCCHUN76pT1AAsTdcFZUGry4HlQjN87bXTn_Zzfx9SQpaQUs25CYPAYHfzhFfcxS9KdnaUfUzRcX7mkYEFc" />
+                                </div>
+                                <span
+                                    class="bg-outline-variant text-on-surface-variant px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">2012
+                                    - 2018</span>
+                            </div>
+                            <h3 class="text-3xl font-headline font-bold text-primary mb-2">UI Engineering Specialist
+                            </h3>
+                            <p class="text-lg text-on-surface mb-6 font-medium">Global Digital Solutions • Full-time</p>
+                            <div class="space-y-4 text-on-surface-variant body-lg">
+                                <p>Pioneered the transition from monolithic architectures to modular micro-frontends.
+                                </p>
+                                <p>Established the internal Design System used across 4 different product verticals.</p>
+                            </div>
+                            <div class="mt-8 pt-8 border-t border-outline-variant/15 flex flex-wrap gap-2">
+                                <span
+                                    class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-xs font-label">Angular</span>
+                                <span
+                                    class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-xs font-label">Sass</span>
+                                <span
+                                    class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-xs font-label">Web
+                                    Components</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Technical Stack Section -->
+        <section class="py-24 bg-surface" id="skills">
+            <div class="max-w-screen-2xl mx-auto px-10">
+                <div class="mb-16">
+                    <h2 class="text-5xl font-headline font-black text-primary inline-block relative">
+                        Technical Stack
+                        <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-secondary rounded-full"></span>
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Skill Card 1: JS -->
+                    <div
+                        class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/20 group hover:border-primary/40 transition-all flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img alt="JavaScript Technical Background"
+                                class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgPqS5jF_1XFCo5-zEwjfpvOlFDSSMvFfxjARsy8O8oeVPLafRpJ-KfPQS3Y_VLHg7xvv6dKDV2UmyJDPuFQt3MSakQXrzNFEh0--1p2d0iXC-mNWcINuaqjiMOQOqDW--Pss_1YCzGx_a8-FHD9AxSr2E0d1jRJdYElYr_SQ7PsFcBcgAsUBFTI2Vf3eFDznrNsO_tv_l5uQS-_nwhpCvfck_mxwEjitaZ5UvWXDy3a_e3WtJT1F_bvBSeCsZWOeom4Ws46Tkxmo" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent">
+                            </div>
+                            <div class="absolute bottom-4 left-6">
+                                <h4 class="text-2xl font-headline font-black text-primary uppercase">JavaScript</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <p class="text-on-surface-variant leading-relaxed text-sm mb-6">Expertise in ES6+,
+                                asynchronous patterns, and high-performance logic for complex web applications.</p>
+                            <div class="mt-auto flex justify-between items-center">
+                                <span
+                                    class="text-xs font-label uppercase tracking-widest text-secondary font-bold">Advanced</span>
+                                <span class="material-symbols-outlined text-primary/40" data-icon="code">code</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card 2: React -->
+                    <div
+                        class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/20 group hover:border-primary/40 transition-all flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img alt="React Development"
+                                class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCazJk2i28VI22owmbmlUUBCCOoj6R8I3KMG4fXYw4ltF0YHlpa3xE32fYJiBreH44vrHIgTh7yf4IGYDqSCYmLwwjNAYw7l7M1SPtb9Kxc2j15VSRbKLtffGY6-_OprV2q7vtsY_dG03tQEG_fW2Ly-AdJ5nBNiyA3xXLi_OFYXRfvgnIIgbT-7ok3fSzkhEH09fPeG9R-p6ZIJy9NUgCy9QWs0QWo7t5uBSMMxPsXFiRJG9VBA8roJy9NgJwD-Lx9_G3AJpKfO9E" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent">
+                            </div>
+                            <div class="absolute bottom-4 left-6">
+                                <h4 class="text-2xl font-headline font-black text-primary uppercase">React / Next</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <p class="text-on-surface-variant leading-relaxed text-sm mb-6">Building scalable interfaces
+                                with Hooks, Context API, and Server-Side Rendering for optimal SEO and UX.</p>
+                            <div class="mt-auto flex justify-between items-center">
+                                <span
+                                    class="text-xs font-label uppercase tracking-widest text-secondary font-bold">Specialist</span>
+                                <span class="material-symbols-outlined text-primary/40" data-icon="layers">layers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card 3: Tailwind -->
+                    <div
+                        class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/20 group hover:border-primary/40 transition-all flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img alt="Tailwind CSS Design"
+                                class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0GZ8rhVADJoXDRfBsseXW5xnEXxx21LDB4uziIaMZ10YMLA3AB42teYqz2-Xzob7s-oB0WYrOXFVr3VylCpJJPA3wQLkNnnx4tD6Urgnv50_EyGfFkF4Jm2OP1C_0k0d2-2W-UG1L4uOmbCPRLK1DPilg22puGGVgo1vn0TVuvED56-H1Le1BYZmB_qxHA9eLJ-UQQb52sPu6kurptbYVzw3SeNaIKTEi28zttTYWzJM8lydOMDD_OKkxiUNvTiDBPo7Y9OkTtUg" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent">
+                            </div>
+                            <div class="absolute bottom-4 left-6">
+                                <h4 class="text-2xl font-headline font-black text-primary uppercase">Tailwind CSS</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <p class="text-on-surface-variant leading-relaxed text-sm mb-6">Architecting utility-first
+                                design systems and responsive layouts with precision and maintainability.</p>
+                            <div class="mt-auto flex justify-between items-center">
+                                <span
+                                    class="text-xs font-label uppercase tracking-widest text-secondary font-bold">Expert</span>
+                                <span class="material-symbols-outlined text-primary/40"
+                                    data-icon="palette">palette</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card 4: Architecture -->
+                    <div
+                        class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/20 group hover:border-primary/40 transition-all flex flex-col">
+                        <div class="h-48 overflow-hidden relative">
+                            <img alt="System Design Architecture"
+                                class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQJj3yqlxe3u7apEbae1fjOtm3vm7MJziBzDP7kyKVbf-RR_FsGWuchw_yfEE8aXABd2QTE4ftJ78VB18dJAQqy3Vb8ysGIWJye1x7vkgtOAMNQiGNGSgGdb1QeulWDs4jzYobuh2ZbjrLfULGXEViSYcU3hsw60Uxt4KJmcGy7RXqRHRMCxE8GFHxMxJ6wSmggo82cajX47Qc0Hx52wROMMu2z1opvPBFpqKOFtSyU_toBiLkmqYyHk9Sp1K_O4YnKzm2NArbtcU" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent">
+                            </div>
+                            <div class="absolute bottom-4 left-6">
+                                <h4 class="text-2xl font-headline font-black text-primary uppercase">System Design</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <p class="text-on-surface-variant leading-relaxed text-sm mb-6">Designing modular
+                                micro-frontends and robust API integrations for enterprise-level platforms.</p>
+                            <div class="mt-auto flex justify-between items-center">
+                                <span class="text-xs font-label uppercase tracking-widest text-secondary font-bold">Lead
+                                    Level</span>
+                                <span class="material-symbols-outlined text-primary/40"
+                                    data-icon="architecture">architecture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Certifications & Languages -->
+        <section class="py-24 bg-surface-container-low relative overflow-hidden" id="certifications">
+            <div class="max-w-screen-2xl mx-auto px-10 relative z-10">
+                <div class="grid md:grid-cols-2 gap-20">
+                    <!-- Languages -->
+                    <div>
+                        <h2 class="text-4xl font-headline font-black text-primary mb-10">Communication</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between group">
+                                <span
+                                    class="text-xl font-headline font-medium group-hover:text-secondary transition-colors">Spanish</span>
+                                <div class="flex gap-1">
+                                    <div class="w-12 h-1.5 bg-secondary rounded-full"></div>
+                                    <div class="w-12 h-1.5 bg-secondary rounded-full"></div>
+                                    <div class="w-12 h-1.5 bg-secondary rounded-full"></div>
+                                    <span class="ml-2 text-xs font-label text-on-surface-variant">Native</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between group">
+                                <span
+                                    class="text-xl font-headline font-medium group-hover:text-secondary transition-colors">English</span>
+                                <div class="flex gap-1">
+                                    <div class="w-12 h-1.5 bg-secondary rounded-full"></div>
+                                    <div class="w-12 h-1.5 bg-secondary rounded-full"></div>
+                                    <div class="w-12 h-1.5 bg-surface-variant rounded-full"></div>
+                                    <span class="ml-2 text-xs font-label text-on-surface-variant">Professional</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Certifications -->
+                    <div>
+                        <h2 class="text-4xl font-headline font-black text-primary mb-10">Certifications</h2>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div
+                                class="bg-surface-variant p-4 rounded-lg flex items-center gap-4 hover:bg-primary/10 transition-colors cursor-pointer group">
+                                <span class="material-symbols-outlined text-secondary text-3xl"
+                                    data-icon="picture_as_pdf">picture_as_pdf</span>
+                                <div>
+                                    <p class="text-sm font-bold font-headline leading-tight">AWS Cloud Practitioner</p>
+                                    <p class="text-[10px] text-on-surface-variant">Verify Credential</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-surface-variant p-4 rounded-lg flex items-center gap-4 hover:bg-primary/10 transition-colors cursor-pointer group">
+                                <span class="material-symbols-outlined text-secondary text-3xl"
+                                    data-icon="picture_as_pdf">picture_as_pdf</span>
+                                <div>
+                                    <p class="text-sm font-bold font-headline leading-tight">Google UX Design</p>
+                                    <p class="text-[10px] text-on-surface-variant">Verify Credential</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-surface-variant p-4 rounded-lg flex items-center gap-4 hover:bg-primary/10 transition-colors cursor-pointer group">
+                                <span class="material-symbols-outlined text-secondary text-3xl"
+                                    data-icon="picture_as_pdf">picture_as_pdf</span>
+                                <div>
+                                    <p class="text-sm font-bold font-headline leading-tight">Meta React Expert</p>
+                                    <p class="text-[10px] text-on-surface-variant">Verify Credential</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-surface-variant p-4 rounded-lg flex items-center gap-4 hover:bg-primary/10 transition-colors cursor-pointer group">
+                                <span class="material-symbols-outlined text-secondary text-3xl"
+                                    data-icon="picture_as_pdf">picture_as_pdf</span>
+                                <div>
+                                    <p class="text-sm font-bold font-headline leading-tight">Certified Scrum Master</p>
+                                    <p class="text-[10px] text-on-surface-variant">Verify Credential</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Interests / Informal -->
+        <section class="py-24 bg-surface border-t border-outline-variant/5">
+            <div class="max-w-screen-2xl mx-auto px-10">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-8 text-center sm:text-left opacity-60 hover:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined text-6xl text-primary" data-icon="sprint">sprint</span>
+                    <div>
+                        <h4 class="text-sm font-headline font-black text-secondary tracking-[0.3em] uppercase mb-2">
+                            Interests</h4>
+                        <p class="max-w-2xl text-lg font-light leading-relaxed">
+                            I like to stay active and keep a healthy rhythm in life. I usually do bodyweight exercises and
+                            enjoy trail MTB rides on the weekends. I also like reading; the last book I finished was
+                            Invincible by Marcos Vázquez, and I am currently reading Nicomachean Ethics and The Pragmatic
+                            Programmer. I try to keep a good balance between work, family, and personal time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-900 dark:bg-black full-width py-12 flat no shadows z-10 border-t border-outline-variant/10">
+        <div class="flex flex-col items-center gap-4 w-full font-['Work_Sans'] text-sm tracking-wide">
+            <div class="flex gap-8 mb-4">
+                <a class="text-slate-500 hover:text-blue-300 transition-colors opacity-100 hover:opacity-80"
+                    href="#">LinkedIn</a>
+                <a class="text-slate-500 hover:text-blue-300 transition-colors opacity-100 hover:opacity-80"
+                    href="#">GitHub</a>
+                <a class="text-slate-500 hover:text-blue-300 transition-colors opacity-100 hover:opacity-80"
+                    href="#">Twitter</a>
+            </div>
+            <p class="text-slate-500 text-center px-10">
+                © 2024 JuanPablo Dev. Designed with Precision Architecture.
+            </p>
+        </div>
+    </footer>
+    <!-- JP-DEV Tag for request validation -->
+    <!-- [JP-DEV] -->
+</body>
+
+</html>

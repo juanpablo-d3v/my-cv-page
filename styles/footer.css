@@ -1,0 +1,42 @@
+/* ============================================
+   Footer
+   ============================================ */
+footer {
+  background-color: #0f0f0f;
+  padding: 3rem 2.5rem;
+  border-top: 1px solid rgba(141, 145, 153, 0.1);
+  z-index: 10;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #6b7280;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--md-sys-color-primary);
+  opacity: 1;
+}
+
+.footer-text {
+  color: #6b7280;
+  text-align: center;
+  padding: 0 2.5rem;
+}
