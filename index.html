@@ -16,6 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet">
 
+    <!-- Hero Background Preload (high priority, above the fold) -->
+    <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high">
+
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="./styles/style.css">
 </head>
@@ -47,7 +50,7 @@
         <section class="hero easter-egg-container" aria-label="Hero Section">
             <!-- Background Image -->
             <div class="hero-bg">
-                <img alt="" src="./images/desktop-wide.jpg" loading="lazy">
+                <img alt="" src="images/hero.webp" fetchpriority="high" decoding="async">
                 <div class="hero-gradient"></div>
             </div>
             <!-- Easter Egg -->
@@ -95,7 +98,7 @@
                         <article class="experience-card">
                             <div class="experience-card-header">
                                 <div class="company-logo">
-                                    <img alt="TCS Logo" src="images/logos/logo-tcs.png" loading="lazy">
+                                    <img alt="TCS Logo" src="images/logos/logo-tcs.webp" loading="lazy">
                                 </div>
                                 <span class="company-badge present">Present</span>
                             </div>
@@ -249,8 +252,8 @@
                 <div class="skills-grid">
                     <!-- AI-Assisted Development -->
                     <article class="skill-card">
-                        <div class="skill-card-image">
-                            <img alt="AI Assisted Development" src="images/skills_ai.png" loading="lazy">
+                        <div class="skill-card-image skill-card-image--ai">
+                            <img alt="AI Assisted Development" src="images/skills_ai.webp" width="650" height="404" loading="lazy">
                             <div class="skill-card-title">
                                 <h4>AI-Assisted Dev</h4>
                             </div>
@@ -267,8 +270,8 @@
 
                     <!-- Frontend -->
                     <article class="skill-card">
-                        <div class="skill-card-image">
-                            <img alt="Frontend Development" src="images/skills_frontend.png" loading="lazy">
+                        <div class="skill-card-image skill-card-image--frontend">
+                            <img alt="Frontend Development" src="images/skills_frontend.webp" width="650" height="404" loading="lazy">
                             <div class="skill-card-title">
                                 <h4>Frontend</h4>
                             </div>
@@ -285,8 +288,8 @@
 
                     <!-- Backend & Serverless -->
                     <article class="skill-card">
-                        <div class="skill-card-image">
-                            <img alt="Backend and Serverless" src="images/skills_backend.png" loading="lazy">
+                        <div class="skill-card-image skill-card-image--backend">
+                            <img alt="Backend and Serverless" src="images/skills_backend.webp" width="650" height="404" loading="lazy">
                             <div class="skill-card-title">
                                 <h4>Backend & Serverless</h4>
                             </div>
@@ -303,8 +306,8 @@
 
                     <!-- Databases & DevOps -->
                     <article class="skill-card">
-                        <div class="skill-card-image">
-                            <img alt="Databases and DevOps" src="images/skills_database.png" loading="lazy">
+                        <div class="skill-card-image skill-card-image--database">
+                            <img alt="Databases and DevOps" src="images/skills_database.webp" width="650" height="404" loading="lazy">
                             <div class="skill-card-title">
                                 <h4>Databases & DevOps</h4>
                             </div>
@@ -321,8 +324,8 @@
 
                     <!-- Testing & CI/CD -->
                     <article class="skill-card">
-                        <div class="skill-card-image">
-                            <img alt="Testing and CI/CD" src="images/skills_testing.png" loading="lazy">
+                        <div class="skill-card-image skill-card-image--testing">
+                            <img alt="Testing and CI/CD" src="images/skills_testing.webp" width="650" height="404" loading="lazy">
                             <div class="skill-card-title">
                                 <h4>Testing & CI/CD</h4>
                             </div>
@@ -339,8 +342,8 @@
 
                     <!-- Legacy Java -->
                     <article class="skill-card">
-                        <div class="skill-card-image">
-                            <img alt="Legacy Java Experience" src="images/skills_legacy.png" loading="lazy">
+                        <div class="skill-card-image skill-card-image--legacy">
+                            <img alt="Legacy Java Experience" src="images/skills_legacy.webp" width="650" height="404" loading="lazy">
                             <div class="skill-card-title">
                                 <h4>Legacy Java</h4>
                             </div>
