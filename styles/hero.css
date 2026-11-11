@@ -123,3 +123,22 @@ section.hero {
 .cta-icons .material-symbols-outlined:hover {
   color: var(--md-sys-color-primary);
 }
+
+/* ============================================
+   Hero Background Fade-In
+   ============================================ */
+
+/* Only when JS is available; without JS the image keeps its design opacity */
+.js-enabled .hero-bg img {
+  transition: opacity var(--transition-slow);
+}
+
+.js-enabled .hero-bg img:not(.is-loaded) {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-enabled .hero-bg img {
+    transition: none;
+  }
+}

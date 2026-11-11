@@ -64,6 +64,9 @@
   position: relative;
   height: 12rem;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .skill-card-image img {
@@ -134,4 +137,45 @@
 .skill-card-icon {
   color: rgba(208, 228, 255, 0.4);
   font-size: 1.5rem;
+}
+
+/* ============================================
+   LQIP Placeholders & Fade-In
+   ============================================ */
+
+/* Blurred inline thumbnails, painted from CSS before the real image loads */
+.skill-card-image--ai {
+  background-image: url("data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAwCdASoYAA8APpE6mEeloyKhMAgAsBIJaQAAW/ExHNEPrAiG4AD+LMSyA1WcXRRPXrShFZxiTfpQAAA=");
+}
+
+.skill-card-image--backend {
+  background-image: url("data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAwCdASoYAA8APpE6mEeloyKhMAgAsBIJaQAAWqFkSFKH+IwGOEYAAP76ZGR0bcJIxmw7OndT4JGTFTm68JW+HBwGllIZo0PZhzesAAA=");
+}
+
+.skill-card-image--database {
+  background-image: url("data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAABwAwCdASoYAA8APpE6mEeloyKhMAgAsBIJaQAAXK+FxezOuoAA/vph3IFpK8YlbphFfzF9bSGyA9pHVRkslt8vbQlRBikMAAA=");
+}
+
+.skill-card-image--frontend {
+  background-image: url("data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoYAA8APpE6mEeloyKhMAgAsBIJaQAAW/uEFsYgHhX/AAD+7RiM0lbRr4U7ApVl7mm0WjiwwDr5cREcdALXWJHoIVzpyZc2fFFJusD887+k7gAA");
+}
+
+.skill-card-image--testing {
+  background-image: url("data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACQAwCdASoYAA8APpE6mEeloyKhMAgAsBIJaQAAXK+yD4bax3xAAP77EHaujGtlLNt7ekV5Cl6Dy47RYgwcYpDAAAA=");
+}
+
+.skill-card-image--legacy {
+  background-image: url("data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAwCdASoYAA8APpE6mEeloyKhMAgAsBIJaQAAW+xk14u3DZXtUZwAAP76kW9GGRFS6QSBu14ClS0CFm6LUAAA");
+}
+
+/* Fade the sharp image in once loaded; only when JS is available so that
+   without JS every image keeps its full design opacity */
+.js-enabled .skill-card-image img:not(.is-loaded) {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-enabled .skill-card-image img {
+    transition: none;
+  }
 }

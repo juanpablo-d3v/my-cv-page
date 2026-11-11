@@ -2,6 +2,9 @@ import NavigationHandler from './nav.js';
 import IconHandler from './icons.js';
 import CertificationHandler from './certifications.js';
 import ScrollAnimations from './scrollAnimations.js';
+import ImageFade from './imageFade.js';
+
+document.documentElement.classList.add('js-enabled');
 
 class App {
   constructor() {
@@ -21,6 +24,7 @@ class App {
     new IconHandler();
     new CertificationHandler();
     new ScrollAnimations();
+    new ImageFade();
     console.log('[JP-DEV] CV Landing Page initialized');
   }
 }
