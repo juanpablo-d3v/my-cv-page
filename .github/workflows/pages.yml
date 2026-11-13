@@ -34,7 +34,7 @@ jobs:
           if [ -z "${GEMINI_API_KEY}" ]; then
             echo "::warning::GEMINI_API_KEY is not set; deploying with AI comparison unavailable."
           fi
-          model="${GEMINI_MODEL:-gemini-2.5-flash}"
+          model="${GEMINI_MODEL:-gemini-3.5-flash-lite}"
           key_json="$(printf '%s' "${GEMINI_API_KEY}" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')"
           model_json="$(printf '%s' "${model}" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')"
           {
