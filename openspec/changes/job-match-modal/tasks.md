@@ -3,9 +3,9 @@
 ## 1. Key provisioning and deployment plumbing
 
 - [ ] 1.1 Verify the Google AI Studio free-tier key and restrict it in Google Cloud console to the Generative Language API and HTTP referrers `https://juanpablo-d3v.github.io/my-cv-page/*`; create a separate unrestricted dev key for local work. Verify with a shell `curl` to the Gemini `generateContent` endpoint using the dev key returning a 200 with a non-empty candidate.
-- [ ] 1.2 Add `scripts/config.js` to `.gitignore` and create a local `scripts/config.js` exporting `{ apiKey, model }` with the dev key. Verify `git check-ignore -v scripts/config.js` matches and `git status --short` lists no `scripts/config.js`.
+- [x] 1.2 Add `scripts/config.js` to `.gitignore` and create a local `scripts/config.js` exporting `{ apiKey, model }` with the dev key. Verify `git check-ignore -v scripts/config.js` matches and `git status --short` lists no `scripts/config.js`.
 - [x] 1.3 Add `.github/workflows/pages.yml` (push to default branch + manual dispatch; permissions `contents: read`, `pages: write`, `id-token: write`; concurrency for Pages) that writes `scripts/config.js` from `secrets.GEMINI_API_KEY` without echoing it, uploads the site artifact, and deploys with `actions/deploy-pages`. Verify the workflow definition parses (`python3 -c "import yaml,sys;yaml.safe_load(open('.github/workflows/pages.yml'))"` or `actionlint`) and contains no `echo`/`set -x` of the secret value.
-- [ ] 1.4 Set the `GEMINI_API_KEY` repository secret and switch Pages source to GitHub Actions. Verify the workflow run completes successfully and the published URL serves the page with `curl -s https://juanpablo-d3v.github.io/my-cv-page/scripts/config.js` returning an ES module export.
+- [x] 1.4 Set the `GEMINI_API_KEY` repository secret and switch Pages source to GitHub Actions. Verify the workflow run completes successfully and the published URL serves the page with `curl -s https://juanpablo-d3v.github.io/my-cv-page/scripts/config.js` returning an ES module export.
 
 ## 2. CV profile and Gemini service
 
@@ -22,7 +22,7 @@
 
 ## 4. Integration verification
 
-- [ ] 4.1 Run the full flow against the real API with the local dev key: a plausible pasted vacancy description yields a score in range, a verdict, matched skills, gaps, and a rationale. Verify the rendered DOM contains an integer score, the verdict is consistent with the score bands, and no model text appears as HTML elements.
+- [x] 4.1 Run the full flow against the real API with the local dev key: a plausible pasted vacancy description yields a score in range, a verdict, matched skills, gaps, and a rationale. Verify the rendered DOM contains an integer score, the verdict is consistent with the score bands, and no model text appears as HTML elements.
 - [x] 4.2 Exercise every failure path locally: build served without `scripts/config.js`, forced network error, forced 429 response, aborted timeout, and a malformed JSON body. Verify each shows the unavailable message with email and CV download actions, displays no score, and that an immediate resubmit is blocked by the cooldown with an explanation.
 - [ ] 4.3 Smoke-test the deployed Pages URL: page loads, comparison succeeds from the allowed referrer, an unsupported browser or disabled-JS load shows no dead CTA, and a 375px viewport is usable. Verify `git grep -I "AIza"` and `git log -S "AIza" --oneline` return nothing across the repository and history.
-- [ ] 4.4 Security pass: submit a vacancy containing an instruction-injection sample and confirm the result stays schema-valid and text-only; confirm the empty-field `aria-invalid`, the privacy notice is visible before submit, and the dialog behaves with Escape, the close control, and focus return.
+- [x] 4.4 Security pass: submit a vacancy containing an instruction-injection sample and confirm the result stays schema-valid and text-only; confirm the empty-field `aria-invalid`, the privacy notice is visible before submit, and the dialog behaves with Escape, the close control, and focus return.

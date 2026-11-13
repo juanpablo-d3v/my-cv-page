@@ -1,7 +1,7 @@
 import { serializeProfile } from '../data/cvProfile.js';
 
 const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
-const DEFAULT_MODEL = 'gemini-flash-latest';
+const DEFAULT_MODEL = 'gemini-3.5-flash-lite';
 const REQUEST_TIMEOUT_MS = 30000;
 const MAX_VACANCY_LENGTH = 2000;
 
@@ -179,7 +179,6 @@ export async function compareVacancy(vacancyText, options = {}) {
             maxOutputTokens: 800,
             responseMimeType: 'application/json',
             responseSchema: RESULT_SCHEMA,
-            thinkingConfig: { thinkingBudget: 0 },
           },
         }),
         signal: controller.signal,
