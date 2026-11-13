@@ -3,6 +3,7 @@ import IconHandler from './icons.js';
 import CertificationHandler from './certifications.js';
 import ScrollAnimations from './scrollAnimations.js';
 import ImageFade from './imageFade.js';
+import JobMatchModal from './components/jobMatchModal.js';
 
 document.documentElement.classList.add('js-enabled');
 
@@ -25,6 +26,7 @@ class App {
     new CertificationHandler();
     new ScrollAnimations();
     new ImageFade();
+    new JobMatchModal();
     console.log('[JP-DEV] CV Landing Page initialized');
   }
 }
