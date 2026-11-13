@@ -1,7 +1,7 @@
 import { serializeProfile } from '../data/cvProfile.js';
 
 const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
-const DEFAULT_MODEL = 'gemini-2.5-flash';
+const DEFAULT_MODEL = 'gemini-flash-latest';
 const REQUEST_TIMEOUT_MS = 30000;
 const MAX_VACANCY_LENGTH = 2000;
 

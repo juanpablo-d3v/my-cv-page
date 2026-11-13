@@ -95,7 +95,7 @@ Create `scripts/config.js` (ignored by git):
 ```js
 export const config = {
   apiKey: 'YOUR_DEV_KEY',
-  model: 'gemini-2.5-flash',
+  model: 'gemini-flash-latest',
 };
 
 export default config;
@@ -108,7 +108,7 @@ Serve the folder as shown above and open `http://localhost:8080`.
 1. Repository **Settings → Secrets and variables → Actions → New repository
    secret**: `GEMINI_API_KEY`.
 2. Optional **Variables** entry: `GEMINI_MODEL` (defaults to
-   `gemini-2.5-flash`).
+   `gemini-flash-latest`).
 3. Repository **Settings → Pages → Build and deployment → Source**:
    **GitHub Actions**.
 4. Push to `main`, or run the **Deploy CV site to GitHub Pages** workflow
