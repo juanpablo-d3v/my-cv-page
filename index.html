@@ -77,6 +77,11 @@
                             class="header-icon-link material-symbols-outlined" aria-label="GitHub" role="button"
                             tabindex="0">code</a>
                     </div>
+                    <button type="button" class="cta-match job-match-cta" data-job-match-open
+                        aria-haspopup="dialog">
+                        <span class="material-symbols-outlined" aria-hidden="true">psychology</span>
+                        <span>Match a vacancy</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -447,6 +452,71 @@
             <p class="footer-text">© 2024 JuanPablo Dev. Designed with Precision Architecture.</p>
         </div>
     </footer>
+
+    <!-- Vacancy Match Dialog -->
+    <dialog id="job-match-dialog" class="job-match-dialog" aria-labelledby="job-match-title">
+        <div class="job-match-dialog-header">
+            <div>
+                <h2 id="job-match-title">Compare a vacancy</h2>
+                <p class="job-match-subtitle">Paste the vacancy text and see how it matches my profile.</p>
+            </div>
+            <button type="button" class="job-match-close" data-job-match-close
+                aria-label="Close vacancy comparison">
+                <span class="material-symbols-outlined" aria-hidden="true">close</span>
+            </button>
+        </div>
+
+        <p id="job-match-privacy" class="job-match-privacy">
+            The vacancy text you paste is sent to Google AI for comparison. This page does not store it.
+        </p>
+
+        <form id="job-match-form" class="job-match-form" novalidate>
+            <label class="job-match-label" for="job-match-input">Vacancy description</label>
+            <textarea id="job-match-input" name="vacancy" class="job-match-input" rows="10"
+                maxlength="2000" required aria-describedby="job-match-counter job-match-error"
+                placeholder="Paste the vacancy here, for example:&#10;Senior Frontend Developer (Remote)&#10;Must have: Angular, TypeScript, RxJS, REST APIs&#10;Nice to have: AWS, CI/CD&#10;5+ years of experience building enterprise web applications"></textarea>
+            <span id="job-match-counter" class="job-match-counter" aria-live="polite">0 / 2000</span>
+            <p id="job-match-error" class="job-match-error" role="alert" hidden></p>
+            <div class="job-match-actions">
+                <button type="submit" class="job-match-submit" data-job-match-submit>Compare vacancy</button>
+                <a class="job-match-secondary" href="mailto:hello@juanpablo.dev">Email me instead</a>
+            </div>
+        </form>
+
+        <p id="job-match-status" class="job-match-status" aria-live="polite"></p>
+
+        <section id="job-match-result" class="job-match-result" hidden aria-labelledby="job-match-result-title">
+            <h3 id="job-match-result-title">Match result</h3>
+            <div class="job-match-score-row">
+                <p class="job-match-score"><span id="job-match-score">0</span><span
+                        class="job-match-score-max">/100</span></p>
+                <p id="job-match-verdict" class="job-match-verdict">-</p>
+            </div>
+            <div class="job-match-result-grid">
+                <div class="job-match-result-block">
+                    <h4>Matched skills</h4>
+                    <ul id="job-match-matched" class="job-match-list"></ul>
+                </div>
+                <div class="job-match-result-block">
+                    <h4>Gaps</h4>
+                    <ul id="job-match-gaps" class="job-match-list"></ul>
+                </div>
+            </div>
+            <div class="job-match-result-block">
+                <h4>Rationale</h4>
+                <p id="job-match-rationale"></p>
+            </div>
+            <p class="job-match-disclaimer">This is an AI-generated estimate, not a definitive judgement.</p>
+        </section>
+
+        <div id="job-match-fallback" class="job-match-fallback" role="alert" hidden>
+            <p id="job-match-fallback-message"></p>
+            <div class="job-match-actions">
+                <a class="job-match-submit-link" href="mailto:hello@juanpablo.dev">Email me</a>
+                <a class="job-match-secondary" href="./ResumeJPSM.pdf" download>Download CV</a>
+            </div>
+        </div>
+    </dialog>
 
     <!-- Main JavaScript Entry Point -->
     <script type="module" src="./scripts/main.js"></script>
