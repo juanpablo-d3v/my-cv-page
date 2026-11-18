@@ -83,18 +83,18 @@ Rollback: revert the Pages source to branch deploy (site returns to the pre-chan
 
 ## Risks / Trade-offs
 
-- **Published key is extractable** → accepted for v1; no billing attached caps damage at quota exhaustion; restriction to the Generative Language API and to site referrers reduces casual reuse; rotation is a secret update + workflow rerun.
+- **Published key is extractable** → accepted for v1; no billing attached caps damage at quota exhaustion; restriction to the Generative Language API only (`AQ.` keys do not support referrer restrictions) and a future backend proxy reduce reuse; rotation is a secret update + workflow rerun.
 - **Quota exhaustion breaks the feature for later visitors** → graceful unavailable state with email/PDF; client cooldown; documented as accepted risk; a Worker proxy is the recorded next step.
 - **Model id deprecation / availability** → model id is a single constant, verified against AI Studio at implementation time; failure surfaces as the unavailable state, not a broken page.
 - **Prompt injection from pasted vacancy text** → untrusted-data delimiting in the prompt, schema-constrained output, client-side validation/clamping, text-only rendering.
 - **Sparse or vague pasted text weakens the comparison** → the placeholder shows the expected detail level, the rubric scores only stated evidence and names missing details in the rationale, and the result is presented as an AI estimate rather than a definitive judgement.
-- **Referrer restriction may not match localhost** → local development uses a separate unrestricted dev key in the gitignored config module; the production key allowlist covers only the Pages origin.
+- **AI Studio `AQ.` keys cannot be referrer-restricted** → risk accepted for v1 and documented; local development uses a separate dev key in the gitignored config module; a backend proxy is the planned follow-up for key hiding and origin restriction.
 - **Pages source switch mistakes** → deployment verification task includes confirming the published URL serves the page and the workflow run is green; rollback documented above.
 - **Secret accidentally printed in logs** → workflow never echoes the value and does not enable debug logging; the secret is masked by Actions in any case.
 
 ## Migration Plan
 
-1. Create/verify the AI Studio key; restrict it to the Generative Language API and the Pages origin (+ localhost dev key).
+1. Create/verify the AI Studio key; restrict it to the Generative Language API (+ separate dev key for localhost).
 2. Add the `GEMINI_API_KEY` Actions secret.
 3. Add the Pages workflow and `.gitignore` entry; switch Pages source to GitHub Actions; deploy and verify the published site.
 4. Roll back by restoring branch-based Pages deployment if the workflow cannot run.
@@ -102,4 +102,5 @@ Rollback: revert the Pages source to branch deploy (site returns to the pre-chan
 ## Open Questions
 
 - Exact free-tier model id to pin (must be verified in AI Studio during implementation; does not change the approach or task breakdown).
-- Whether a custom domain replaces the `github.io` origin later; if so, the key's referrer allowlist needs the new origin (configuration detail only).
+- Whether a custom domain replaces the `github.io` origin later (documentation/configuration detail only).
+- When to add the backend proxy that hides the key and enables origin restriction.

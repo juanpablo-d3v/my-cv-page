@@ -33,6 +33,7 @@
 }
 
 .job-match-dialog {
+  margin: auto;
   width: min(44rem, calc(100vw - 2rem));
   max-height: 90vh;
   padding: var(--spacing-xl);
