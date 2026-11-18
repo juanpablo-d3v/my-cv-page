@@ -32,6 +32,9 @@ class JobMatchModal {
   constructor() {
     this.trigger = document.querySelector('[data-job-match-open]');
     this.dialog = document.getElementById('job-match-dialog');
+    this.inputView = document.getElementById('job-match-view-input');
+    this.loadingView = document.getElementById('job-match-view-loading');
+    this.result = document.getElementById('job-match-result');
     this.form = document.getElementById('job-match-form');
     this.input = document.getElementById('job-match-input');
     this.counter = document.getElementById('job-match-counter');
@@ -39,7 +42,9 @@ class JobMatchModal {
     this.submitButton = document.querySelector('[data-job-match-submit]');
     this.errorMessage = document.getElementById('job-match-error');
     this.status = document.getElementById('job-match-status');
-    this.result = document.getElementById('job-match-result');
+    this.loadingMessage = document.getElementById('job-match-loading-message');
+    this.resultHeading = document.getElementById('job-match-result-title');
+    this.anotherButton = document.querySelector('[data-job-match-another]');
     this.score = document.getElementById('job-match-score');
     this.verdict = document.getElementById('job-match-verdict');
     this.matched = document.getElementById('job-match-matched');
@@ -51,17 +56,31 @@ class JobMatchModal {
     this.cooldownUntil = 0;
     this.loading = false;
     this.lastFocused = null;
+    this.generation = 0;
+    this.view = null;
+    this.views = {
+      input: this.inputView,
+      loading: this.loadingView,
+      result: this.result,
+    };
 
     if (
       !this.trigger ||
       !this.dialog ||
       !this.form ||
       !this.input ||
-      !this.submitButton
+      !this.submitButton ||
+      !this.inputView ||
+      !this.loadingView ||
+      !this.result ||
+      !this.loadingMessage ||
+      !this.resultHeading ||
+      !this.anotherButton
     ) {
       return;
     }
 
+    this.setView('input');
     this.initializeDialog();
     this.initializeForm();
     this.restoreCooldown();
@@ -70,6 +89,7 @@ class JobMatchModal {
   initializeDialog() {
     this.trigger.addEventListener('click', () => this.open());
     this.closeButton?.addEventListener('click', () => this.dialog.close());
+    this.anotherButton.addEventListener('click', () => this.startAnotherComparison());
     this.dialog.addEventListener('close', () => {
       if (this.lastFocused) {
         this.lastFocused.focus();
@@ -83,8 +103,17 @@ class JobMatchModal {
     this.updateCounter();
   }
 
+  setView(view) {
+    this.view = view;
+
+    for (const [name, element] of Object.entries(this.views)) {
+      element.hidden = name !== view;
+    }
+  }
+
   open() {
     this.lastFocused = document.activeElement;
+    this.resetInput();
     this.dialog.showModal();
     this.input.focus();
   }
@@ -123,33 +152,42 @@ class JobMatchModal {
     }
 
     if (this.isCoolingDown()) {
-      this.setStatus(
-        `Please wait ${this.remainingCooldownSeconds()}s before comparing again.`,
-      );
       return;
     }
 
     this.clearFieldError();
-    this.prepareRequest();
+    const generation = this.prepareRequest();
 
     try {
       const result = await compareVacancy(text.slice(0, MAX_VACANCY_LENGTH));
+
+      if (generation !== this.generation) {
+        return;
+      }
+
       this.showResult(result);
     } catch (error) {
+      if (generation !== this.generation) {
+        return;
+      }
+
       this.showFailure(error);
     } finally {
-      this.setLoading(false);
+      if (generation === this.generation) {
+        this.setLoading(false);
+      }
     }
-
-    this.startCooldown();
   }
 
   prepareRequest() {
     this.setLoading(true);
-    this.result.hidden = true;
     this.fallback.hidden = true;
-    this.setStatus('Comparing vacancy with my profile...');
+    this.setStatus('');
     this.rememberSubmit();
+    this.startCooldown();
+    this.setView('loading');
+    this.loadingMessage.focus();
+    return this.generation;
   }
 
   showResult(result) {
@@ -161,18 +199,45 @@ class JobMatchModal {
     this.renderList(this.matched, result.matchedSkills, 'No clear matches found.');
     this.renderList(this.gaps, result.gaps, 'No major gaps identified.');
     this.rationale.textContent = result.rationale;
-    this.result.hidden = false;
+    this.setView('result');
     this.setStatus('Comparison complete.');
+    this.resultHeading.focus();
   }
 
   showFailure(error) {
     const code = error instanceof JobMatchError ? error.code : 'invalid';
     const message = FAILURE_MESSAGES[code] ?? FAILURE_MESSAGES.invalid;
 
-    this.result.hidden = true;
     this.fallbackMessage.textContent = message;
     this.fallback.hidden = false;
+    this.setView('input');
     this.setStatus('');
+    this.input.focus();
+  }
+
+  startAnotherComparison() {
+    this.resetInput();
+    this.input.focus();
+  }
+
+  resetInput() {
+    this.generation += 1;
+    this.loading = false;
+    this.form.removeAttribute('aria-busy');
+    this.input.value = '';
+    this.updateCounter();
+    this.clearFieldError();
+    this.fallbackMessage.textContent = '';
+    this.fallback.hidden = true;
+    this.setStatus('');
+    this.score.textContent = '0';
+    this.verdict.textContent = '-';
+    this.verdict.removeAttribute('data-band');
+    this.matched.replaceChildren();
+    this.gaps.replaceChildren();
+    this.rationale.textContent = '';
+    this.setView('input');
+    this.syncSubmitControl();
   }
 
   renderList(list, items, emptyMessage) {
@@ -205,11 +270,26 @@ class JobMatchModal {
 
   setLoading(isLoading) {
     this.loading = isLoading;
-    this.submitButton.disabled = isLoading || this.isCoolingDown();
     this.form.toggleAttribute('aria-busy', isLoading);
+    this.syncSubmitControl();
+  }
 
-    if (!isLoading) {
-      this.submitButton.textContent = 'Compare vacancy';
+  syncSubmitControl() {
+    const unavailable = this.loading || this.isCoolingDown();
+    let label = 'Compare vacancy';
+
+    if (this.loading) {
+      label = 'Comparing...';
+    } else if (this.isCoolingDown()) {
+      label = `Compare vacancy (${this.remainingCooldownSeconds()}s)`;
+    }
+
+    this.submitButton.textContent = label;
+
+    if (unavailable) {
+      this.submitButton.setAttribute('aria-disabled', 'true');
+    } else {
+      this.submitButton.removeAttribute('aria-disabled');
     }
   }
 
@@ -234,13 +314,13 @@ class JobMatchModal {
 
     if (stored > Date.now()) {
       this.cooldownUntil = stored;
-      this.submitButton.disabled = true;
       this.startCooldownCountdown();
     }
+
+    this.syncSubmitControl();
   }
 
   startCooldown() {
-    this.submitButton.disabled = true;
     this.startCooldownCountdown();
   }
 
@@ -250,21 +330,14 @@ class JobMatchModal {
     }
 
     const tick = () => {
-      const remaining = this.remainingCooldownSeconds();
-
-      if (remaining <= 0) {
+      if (this.remainingCooldownSeconds() <= 0) {
         clearInterval(this.cooldownTimer);
         this.cooldownTimer = null;
-        this.submitButton.disabled = this.loading;
-        if (this.fallback.hidden) {
-          this.setStatus(this.result.hidden ? '' : 'Comparison complete.');
-        }
+        this.syncSubmitControl();
         return;
       }
 
-      if (this.fallback.hidden) {
-        this.setStatus(`You can compare again in ${remaining}s.`);
-      }
+      this.syncSubmitControl();
     };
 
     tick();
