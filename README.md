@@ -71,22 +71,26 @@ python3 -m http.server 8080
 The hero "Match a vacancy" button opens a dialog where a recruiter pastes a
 vacancy and receives an AI comparison against the curated profile in
 `scripts/data/cvProfile.js`. Requests go directly from the browser to the Google
-Gemini API, so the API key is part of the deployed artifact. Keep it restricted
-and treat it as public.
+Gemini API, so the API key is part of the deployed artifact. Treat the key as
+public.
 
 The key is never committed. `scripts/config.js` is gitignored and is generated
 for deployment by `.github/workflows/pages.yml` from the `GEMINI_API_KEY`
 Actions secret.
 
-### 1. Create and restrict the key
+### 1. Create and provision the key
 
-In [Google AI Studio](https://aistudio.google.com/), create (or reuse) a free-tier
-key and restrict it in Google Cloud console:
+In [Google AI Studio](https://aistudio.google.com/), create (or reuse) a
+free-tier key:
 
-- API restriction: **Generative Language API**.
-- HTTP referrer restriction: `https://juanpablo-d3v.github.io/my-cv-page/*`.
-- Create a separate, unrestricted development key for local work; the production
-  allowlist does not cover `http://localhost`.
+- Restrict it to the **Generative Language API** in Google Cloud console.
+- AI Studio keys use the server-side `AQ.` format, for which Google intentionally
+  disables HTTP referrer restrictions. Since this site calls the API directly
+  from the browser, the deployed key is extractable; a backend proxy is the
+  planned follow-up that will hide the key and allow origin restrictions.
+- Mitigate meanwhile with a project that has no billing attached, quota/budget
+  alerts, and periodic rotation.
+- Create a separate development key for local work.
 
 ### 2. Local development
 

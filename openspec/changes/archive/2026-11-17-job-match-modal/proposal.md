@@ -12,7 +12,7 @@ A recruiter visiting the CV page has to manually map a vacancy against the profi
 - Render the result as a match score (0–100), verdict band, matched skills, gaps, and a short rationale, plus email/CV actions; all model output is rendered as text, never HTML.
 - Handle unavailable AI (missing key, offline, quota/429, timeout, malformed response) with a clear message and the existing email/PDF fallbacks — no fabricated score.
 - Deliver the API key at deploy time through a GitHub Actions secret injected into the published artifact; the key MUST NOT be committed to the repository. Local development uses a gitignored config module.
-- Document the Google AI Studio key restrictions (API and HTTP-referrer allowlist) and the accepted residual risk that the served key is extractable and can consume the free-tier quota.
+- Document the Google AI Studio key constraint (server-side `AQ.` keys cannot use HTTP referrer restrictions) and the accepted residual risk that the served key is extractable and can consume the free-tier quota; a backend proxy is recorded as future work.
 
 Out of scope for this change: a server-side proxy/Worker, deterministic offline scoring, browser-built-in AI, automatic CV-profile extraction from the DOM, internationalization, and analytics.
 
