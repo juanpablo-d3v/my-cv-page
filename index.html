@@ -466,27 +466,43 @@
             </button>
         </div>
 
-        <p id="job-match-privacy" class="job-match-privacy">
-            The vacancy text you paste is sent to Google AI for comparison. This page does not store it.
-        </p>
+        <div id="job-match-view-input" class="job-match-view">
+            <p id="job-match-privacy" class="job-match-privacy">
+                The vacancy text you paste is sent to Google AI for comparison. This page does not store it.
+            </p>
 
-        <form id="job-match-form" class="job-match-form" novalidate>
-            <label class="job-match-label" for="job-match-input">Vacancy description</label>
-            <textarea id="job-match-input" name="vacancy" class="job-match-input" rows="10"
-                maxlength="2000" required aria-describedby="job-match-counter job-match-error"
-                placeholder="Paste the vacancy here, for example:&#10;Senior Frontend Developer (Remote)&#10;Must have: Angular, TypeScript, RxJS, REST APIs&#10;Nice to have: AWS, CI/CD&#10;5+ years of experience building enterprise web applications"></textarea>
-            <span id="job-match-counter" class="job-match-counter" aria-live="polite">0 / 2000</span>
-            <p id="job-match-error" class="job-match-error" role="alert" hidden></p>
-            <div class="job-match-actions">
-                <button type="submit" class="job-match-submit" data-job-match-submit>Compare vacancy</button>
-                <a class="job-match-secondary" href="mailto:hello@juanpablo.dev">Email me instead</a>
+            <form id="job-match-form" class="job-match-form" novalidate>
+                <label class="job-match-label" for="job-match-input">Vacancy description</label>
+                <textarea id="job-match-input" name="vacancy" class="job-match-input" rows="10"
+                    maxlength="2000" required aria-describedby="job-match-counter job-match-error"
+                    placeholder="Paste the vacancy here, for example:&#10;Senior Frontend Developer (Remote)&#10;Must have: Angular, TypeScript, RxJS, REST APIs&#10;Nice to have: AWS, CI/CD&#10;5+ years of experience building enterprise web applications"></textarea>
+                <span id="job-match-counter" class="job-match-counter" aria-live="polite">0 / 2000</span>
+                <p id="job-match-error" class="job-match-error" role="alert" hidden></p>
+                <div class="job-match-actions">
+                    <button type="submit" class="job-match-submit" data-job-match-submit>Compare vacancy</button>
+                    <a class="job-match-secondary" href="mailto:hello@juanpablo.dev">Email me instead</a>
+                </div>
+            </form>
+
+            <div id="job-match-fallback" class="job-match-fallback" role="alert" hidden>
+                <p id="job-match-fallback-message"></p>
+                <div class="job-match-actions">
+                    <a class="job-match-submit-link" href="mailto:hello@juanpablo.dev">Email me</a>
+                    <a class="job-match-secondary" href="./ResumeJPSM.pdf" download>Download CV</a>
+                </div>
             </div>
-        </form>
+        </div>
 
-        <p id="job-match-status" class="job-match-status" aria-live="polite"></p>
+        <div id="job-match-view-loading" class="job-match-view" hidden>
+            <div class="job-match-loading">
+                <span class="job-match-spinner" aria-hidden="true"></span>
+                <p id="job-match-loading-message" tabindex="-1">Comparing vacancy with my profile...</p>
+            </div>
+        </div>
 
-        <section id="job-match-result" class="job-match-result" hidden aria-labelledby="job-match-result-title">
-            <h3 id="job-match-result-title">Match result</h3>
+        <section id="job-match-result" class="job-match-result job-match-view" hidden
+            aria-labelledby="job-match-result-title">
+            <h3 id="job-match-result-title" tabindex="-1">Match result</h3>
             <div class="job-match-score-row">
                 <p class="job-match-score"><span id="job-match-score">0</span><span
                         class="job-match-score-max">/100</span></p>
@@ -507,15 +523,14 @@
                 <p id="job-match-rationale"></p>
             </div>
             <p class="job-match-disclaimer">This is an AI-generated estimate, not a definitive judgement.</p>
-        </section>
-
-        <div id="job-match-fallback" class="job-match-fallback" role="alert" hidden>
-            <p id="job-match-fallback-message"></p>
-            <div class="job-match-actions">
-                <a class="job-match-submit-link" href="mailto:hello@juanpablo.dev">Email me</a>
+            <div class="job-match-actions job-match-result-actions">
+                <button type="button" class="job-match-return" data-job-match-another>Compare another vacancy</button>
+                <a class="job-match-secondary" href="mailto:hello@juanpablo.dev">Email me</a>
                 <a class="job-match-secondary" href="./ResumeJPSM.pdf" download>Download CV</a>
             </div>
-        </div>
+        </section>
+
+        <p id="job-match-status" class="job-match-status" aria-live="polite"></p>
     </dialog>
 
     <!-- Main JavaScript Entry Point -->
