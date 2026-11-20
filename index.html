@@ -28,9 +28,10 @@
     <header role="banner">
         <div class="header-container">
             <div class="header-logo">
-                <img src="images/logos/JPdev_logo_h.svg" alt="Company Name" width="224" height="70">
+                <img src="images/logos/JPdevLogoW.svg" alt="Company Name" width="230" height="64">
             </div>
             <nav class="header-nav-desktop" role="navigation" aria-label="Main Navigation">
+                <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
                 <a href="#certifications">Certifications</a>
@@ -82,6 +83,204 @@
                         <span class="material-symbols-outlined" aria-hidden="true">psychology</span>
                         <span>Match a vacancy</span>
                     </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section" id="projects" aria-labelledby="projects-title">
+            <div class="section-container">
+                <div class="section-title">
+                    <h2 id="projects-title">Featured Projects &amp; Solutions</h2>
+                </div>
+
+                <p class="projects-intro">
+                    Four production systems delivered across insurance, fintech, e-government and energy, built with
+                    Angular, Node.js and relational databases.
+                </p>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <img class="project-card-bg" src="images/projects/project-placeholder.svg" alt=""
+                            loading="lazy" decoding="async" width="1200" height="400">
+                        <div class="project-card-content">
+                            <div class="project-meta">
+                                <span class="project-category">Enterprise Insurance Platform</span>
+                                <span class="project-client">TCS • Sept 2022 — Present</span>
+                                <span class="project-status">Active role</span>
+                            </div>
+                            <h3>Corporate Software Request Lifecycle Platform</h3>
+                            <p class="project-description">
+                                Full-stack internal application for a major insurance company that manages the end-to-end
+                                lifecycle of corporate software requests, approvals, reviews and resolutions. Expanded the
+                                serverless backend with Node.js, Express and AWS Lambda endpoints, administered PostgreSQL
+                                with DML incident fixes and DDL schema changes, and built complex data tables with Angular
+                                Material and AG-Grid for banking services.
+                            </p>
+                            <ul class="project-highlights">
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">smart_toy</span>
+                                    <span>AI-assisted work with GitHub Copilot</span>
+                                </li>
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">table_chart</span>
+                                    <span>AG-Grid tables for banking services</span>
+                                </li>
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">cloud_queue</span>
+                                    <span>Serverless Node.js and AWS Lambda endpoints</span>
+                                </li>
+                            </ul>
+                            <div class="project-footer">
+                                <ul class="project-tags">
+                                    <li class="tag">Angular</li>
+                                    <li class="tag">Node.js</li>
+                                    <li class="tag">PostgreSQL</li>
+                                    <li class="tag">AWS Lambda</li>
+                                    <li class="tag">Express</li>
+                                    <li class="tag">Angular Material</li>
+                                    <li class="tag">AG-Grid</li>
+                                    <li class="tag">GitHub Copilot</li>
+                                </ul>
+                                <a class="project-link" href="#experience">View Career Role <span
+                                        class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img class="project-card-bg" src="images/projects/project-placeholder.svg" alt=""
+                            loading="lazy" decoding="async" width="1200" height="400">
+                        <div class="project-card-content">
+                            <div class="project-meta">
+                                <span class="project-category">Fintech Payment Gateway</span>
+                                <span class="project-client">NTT Data • Brilla Group</span>
+                                <span class="project-period">Sept 2021 — Sept 2022</span>
+                            </div>
+                            <h3>Reactive Payment Gateway Wizard</h3>
+                            <p class="project-description">
+                                Angular payment gateway wizard for Brilla Group that integrated microservices through
+                                reactive RxJS responses for real-time status tracking. Supported by automated Karma and
+                                Jasmine unit tests running in Jenkins and Sonar CI/CD pipelines.
+                            </p>
+                            <ul class="project-highlights">
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">bolt</span>
+                                    <span>RxJS real-time status tracking</span>
+                                </li>
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
+                                    <span>Karma and Jasmine unit tests</span>
+                                </li>
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">hub</span>
+                                    <span>Microservice integrations</span>
+                                </li>
+                            </ul>
+                            <div class="project-footer">
+                                <ul class="project-tags">
+                                    <li class="tag">Angular</li>
+                                    <li class="tag">RxJS</li>
+                                    <li class="tag">ng-bootstrap</li>
+                                    <li class="tag">Karma</li>
+                                    <li class="tag">Jasmine</li>
+                                    <li class="tag">Jenkins</li>
+                                    <li class="tag">SonarQube</li>
+                                </ul>
+                                <p class="project-domain"><span class="material-symbols-outlined"
+                                        aria-hidden="true">account_balance</span> Financial services</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img class="project-card-bg" src="images/projects/project-placeholder.svg" alt=""
+                            loading="lazy" decoding="async" width="1200" height="400">
+                        <div class="project-card-content">
+                            <div class="project-meta">
+                                <span class="project-category">E-Government Modernization</span>
+                                <span class="project-client">Poder Judicial del Estado de Colima</span>
+                                <span class="project-period">Jun 2014 — Sept 2021</span>
+                            </div>
+                            <h3>Tribunal Electrónico &amp; Digital Signature Platform</h3>
+                            <p class="project-description">
+                                Directed the Desarrollo Tecnológico department while modernizing institutional systems with
+                                Slim Framework REST APIs and Angular web clients. Launched the Tribunal Electrónico
+                                platform for electronic notifications and promotions secured by cryptographic digital
+                                signatures, and migrated the institutional site to an Angular SPA with a WP API and custom
+                                date scheduling for office capacity control during Covid19 restrictions.
+                            </p>
+                            <ul class="project-highlights">
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">key</span>
+                                    <span>Cryptographic digital signatures</span>
+                                </li>
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">api</span>
+                                    <span>Slim Framework REST APIs</span>
+                                </li>
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">calendar_clock</span>
+                                    <span>Angular SPA with WP API</span>
+                                </li>
+                            </ul>
+                            <div class="project-footer">
+                                <ul class="project-tags">
+                                    <li class="tag">Angular</li>
+                                    <li class="tag">REST API</li>
+                                    <li class="tag">Slim Framework</li>
+                                    <li class="tag">MySQL</li>
+                                    <li class="tag">Ubuntu</li>
+                                    <li class="tag">WP API</li>
+                                </ul>
+                                <p class="project-domain"><span class="material-symbols-outlined"
+                                        aria-hidden="true">gavel</span> Judicial authority platform</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img class="project-card-bg" src="images/projects/project-placeholder.svg" alt=""
+                            loading="lazy" decoding="async" width="1200" height="400">
+                        <div class="project-card-content">
+                            <div class="project-meta">
+                                <span class="project-category">Energy &amp; Telemetry Analytics</span>
+                                <span class="project-client">Iberdrola • NTT Data</span>
+                                <span class="project-period">Sept 2021 — Sept 2022</span>
+                            </div>
+                            <h3>Fraud Detection Dashboard Modules</h3>
+                            <p class="project-description">
+                                Added modules to a fraud detection dashboard for Iberdrola using ng-bootstrap and
+                                ngx-datatable to monitor sales and service processes. Executed automated unit tests with
+                                Karma and Jasmine within Jenkins and Sonar CI/CD pipelines.
+                            </p>
+                            <ul class="project-highlights">
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">query_stats</span>
+                                    <span>ngx-datatable monitoring grids</span>
+                                </li>
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+                                    <span>Sales and service process monitoring</span>
+                                </li>
+                                <li>
+                                    <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
+                                    <span>Karma and Jasmine unit tests</span>
+                                </li>
+                            </ul>
+                            <div class="project-footer">
+                                <ul class="project-tags">
+                                    <li class="tag">Angular</li>
+                                    <li class="tag">ng-bootstrap</li>
+                                    <li class="tag">ngx-datatable</li>
+                                    <li class="tag">Karma</li>
+                                    <li class="tag">Jasmine</li>
+                                    <li class="tag">Jenkins</li>
+                                </ul>
+                                <p class="project-domain"><span class="material-symbols-outlined"
+                                        aria-hidden="true">shield</span> Fraud detection dashboard</p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
