@@ -23,6 +23,10 @@ section.skills-section {
   background-color: var(--md-sys-color-surface);
 }
 
+section.projects-section {
+  background-color: var(--md-sys-color-surface-container);
+}
+
 section.certifications-section {
   background-color: var(--md-sys-color-surface-container-low);
   position: relative;

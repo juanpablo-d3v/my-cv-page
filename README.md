@@ -20,6 +20,7 @@ web-cv/
 │   ├── hero.css          # Hero section
 │   ├── experience.css    # Experience section
 │   ├── skills.css        # Skills section
+│   ├── projects.css      # Featured projects section
 │   ├── certifications.css
 │   ├── interests.css
 │   ├── footer.css
@@ -43,7 +44,10 @@ web-cv/
 │       └── handleKeyboardNavigation.js
 ├── .github/workflows/
 │   └── pages.yml         # Pages deploy; injects the AI key at build time
-└── images/, assets/      # Static assets
+├── images/
+│   └── projects/
+│       └── project-placeholder.svg
+└── assets/               # Static assets
 ```
 
 ## Conventions
@@ -56,6 +60,7 @@ web-cv/
   under `styles/`; `style.css` only lists imports (order matters: tokens first,
   responsive overrides and utilities last).
 - **No external dependencies.** Keep everything browser-native.
+- **Project imagery is swappable.** Replace `images/projects/project-placeholder.svg` in the project cards with real local images and verified copy; no JavaScript or dependency changes are needed.
 
 ## Running locally
 
